@@ -1,0 +1,238 @@
+/* 全局样式重置：消除浏览器默认样式差异 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei", sans-serif;
+}
+
+/* 容器：限制页面宽度，居中显示 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* logo样式：控制logo大小 */
+.logo img {
+    height: 60px; /* 根据你的logo调整高度 */
+    width: auto; /* 保持宽高比 */
+}
+
+/* 头部布局：logo和导航横向排列 */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 导航样式 */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* 导航项之间的间距 */
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #0088ff; /* 鼠标悬浮变色（适配新主色） */
+}
+
+/* 主体内容通用样式 */
+.main {
+    padding: 60px 0;
+}
+
+/* 公司介绍模块 */
+.about {
+    margin-bottom: 80px;
+}
+
+.about h2 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #0088ff; /* 统一主色 */
+    margin: 10px auto;
+}
+
+/* 公司介绍内容优化 */
+.about-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 40px;
+}
+
+.about-content h3 {
+    font-size: 24px;
+    color: #222;
+    margin: 40px 0 30px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.about-content h3::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #0088ff;
+    margin: 8px auto 0;
+}
+
+/* 主营业务列表样式（优化版） */
+.business-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.business-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #0088ff;
+}
+
+/* 数字标优化：缩小+淡色+圆角 */
+.business-num {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #e8f4ff;
+    color: #0088ff;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+/* 业务文本样式 */
+.business-text {
+    flex: 1;
+    text-align: left;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* 联系方式模块 */
+.contact h2 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.contact h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #0088ff; /* 统一主色 */
+    margin: 10px auto;
+}
+
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #666;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #0088ff; /* 统一主色 */
+    margin-right: 15px;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+/* 响应式适配：适配手机等小屏幕 */
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about h2, .contact h2 {
+        font-size: 28px;
+    }
+
+    .business-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .business-num {
+        margin-bottom: 8px;
+    }
+}
